@@ -35,6 +35,10 @@ function requestUserRepos(username){
 
     // parse API data into JSON
     const data = JSON.parse(this.response);
+    let root = document.getElementById('userRepos');
+    while (root.firstChild) {
+      root.removeChild(root.firstChild);
+    }
 
     // loop over each object in data array
     for (let  i in data) {
